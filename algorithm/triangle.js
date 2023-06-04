@@ -1,18 +1,20 @@
 function solution(a, b, c) {
-  let answer = "Yes";
+  let answer = "";
 
   let sum = a + b + c;
   let max;
 
   if (a > b && a > c) {
     max = a;
-  } else if (b > c) {
+  } else if (b > a && b > c) {
     max = b;
   } else {
     max = c;
   }
 
-  if (sum - max <= max || sum - max > c) {
+  if (sum - max > max && sum - max <= c) {
+    answer = "Yes";
+  } else {
     answer = "No";
   }
 
